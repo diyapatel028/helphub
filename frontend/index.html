@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HelpHub</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="icon" href="./assets/logo.png" />
+</head>
+<body>
+  <header class="hh-header">
+    <div class="brand">
+      <img src="./assets/logo.png" alt="HelpHub" class="logo" />
+      <div class="title">
+        <div class="app-name">HelpHub</div>
+        <div class="tag">Need help? Community responds.</div>
+      </div>
+    </div>
+
+    <nav id="navbar"></nav>
+
+    <div class="auth">
+      <button id="btn-signin" class="btn">Sign In</button>
+      <button id="btn-signout" class="btn alt hidden">Sign Out</button>
+      <span id="user-chip" class="chip hidden"></span>
+    </div>
+  </header>
+
+  <main class="container fade-in">
+    <section class="dashboard-cards">
+      <div class="card"><div class="n" id="stat-requests">0</div><div>Active Requests</div></div>
+      <div class="card"><div class="n" id="stat-helped">0</div><div>Helped Today</div></div>
+      <div class="card"><div class="n" id="stat-rate">0%</div><div>Response Rate</div></div>
+      <div class="card"><div class="n" id="stat-members">0</div><div>Community Members</div></div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" placeholder="Search requests..." />
+      <select id="filter-category">
+        <option value="">All Categories</option>
+        <option>Lost & Found</option>
+        <option>Blood Donation</option>
+        <option>Study Partner</option>
+        <option>Volunteer</option>
+        <option>Emergency</option>
+      </select>
+      <button id="btn-post" class="btn primary">+ Post Request</button>
+      <button id="btn-my" class="btn">My Requests</button>
+    </section>
+
+    <section id="requests-grid" class="grid"></section>
+  </main>
+
+  <!-- Modal host -->
+  <div id="modal" class="modal hidden"></div>
+
+  <!-- components and scripts -->
+  <script type="module" src="./scripts/firebase.js"></script>
+  <script type="module" src="./scripts/emailjs.js"></script>
+  <script type="module" src="./scripts/ai-helper.js"></script>
+  <script type="module" src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/app.js"></script>
+</body>
+</html>
+
